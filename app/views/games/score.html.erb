@@ -1,0 +1,18 @@
+<h1 class="text-center p-3 mb-2">Longest word game</h1>
+
+<h3 class="text-center p-2 bg-primary text-white w-50 m-auto">Your choosen word: <span ps-3><%= @word %></span></h3>
+
+<div class="d-flex justify-content-center p-3 m-3">
+  <h3 class="me-3">Your result: </h3>
+  <% if @result && @english_word %>
+    <h3>  <strong>Congratulations</strong> <%= @word %> is a valid English word  </h3>
+  <% elsif @english_word && !@result %>
+      <h3> Sorry, <%=  @word %> can not be formed using <%= @letters  %> </h3>
+  <% else %>
+    <h3><%= @word %> is not a valid English word </h3>
+  <% end %>
+</div>
+
+<div class="text-center mt-2">
+  <%= link_to 'Play again', new_path %>
+</div>
